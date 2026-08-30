@@ -2,6 +2,7 @@
 
 Type: grilling
 Status: resolved
+GitHub: https://github.com/ge1123/DDIA_LABS/issues/3
 
 ## Question
 
@@ -66,7 +67,7 @@ Lab 不是 production reference architecture。Correct Version 只需要在已�
 | Performance claim | 只有當 hypothesis 涉及吞吐、延遲、skew、stampede 或 backpressure 時才加入 warm-up、重複 runs、units、variability 與 k6/等價 workload；correctness Lab 不必為了好看加入 benchmark。 |
 | Retained evidence | Git 只保留小型穩定 summary、fixture 與再生命令；記錄 commit、OS/architecture、版本、image digest、seed、concurrency、run count 和異常。 |
 
-通用 run count 或 timeout 不在此票硬編一個數字；`Define the evidence and acceptance matrix` 依 concurrency、message delivery、crash recovery、replication、performance 和 stream semantics 分類設定。每個 Lab 必須在執行前選定適用類別與門檻。
+通用 run count 或 timeout 不在此票硬編一個數字；[Define the evidence and acceptance matrix](07-define-the-evidence-matrix.md) 已依 deterministic transformation、concurrency、message delivery、crash recovery、replication、performance 和 stream semantics 分類設定。每個 Lab 必須在執行前選定適用類別與門檻。
 
 ### Mandatory split rules
 

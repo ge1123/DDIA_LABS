@@ -4,6 +4,8 @@
 
 Verified as the initial acceptance policy.
 
+Numeric run counts, deadlines, tooling boundaries, and flaky-test handling are defined by the proposed [Lab evidence matrix](evidence-matrix.md).
+
 ## Acceptance matrix
 
 | Claim type | Minimum evidence | Common invalid shortcut |
@@ -30,4 +32,3 @@ Verified as the initial acceptance policy.
 - Inconclusive: the setup ran, but evidence cannot distinguish the competing explanations.
 - Rejected: evidence contradicts the hypothesis.
 - Invalid: setup or measurement defects prevent interpretation.
-

@@ -2,6 +2,7 @@
 
 Type: research
 Status: resolved
+GitHub: https://github.com/ge1123/DDIA_LABS/issues/1
 
 ## Question
 

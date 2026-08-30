@@ -2,7 +2,7 @@
 
 ## Status
 
-The Wiki-first knowledge architecture is established. Its navigation and maintenance rules are Verified by the current repository structure. DDIA concepts and Labs remain Pending until their own pages contain source locators and reproducible evidence.
+The Wiki-first knowledge architecture is established. Its navigation and maintenance rules are Verified by the current repository structure. The 25-Lab implementation-ready curriculum blueprint is Proposed: concept anchors, ordering, Lab boundaries, workloads, and evidence gates are recorded, but no executable Lab yet verifies runtime behavior.
 
 ## Entry points
 
