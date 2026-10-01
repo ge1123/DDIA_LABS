@@ -212,15 +212,45 @@
 
 ## 網站與 GitHub Pages 部署
 
-靜態首頁放在 `site/`，使用 HTML 與 CSS，無需安裝套件或建置。
+筆記站的內容、版型與建置程式放在 `site/`，以 Markdown 撰寫筆記，再產生 HTML、CSS 與 JavaScript 靜態頁面。首頁依三篇分組顯示 14 章，章節頁提供導覽、本頁目錄、比較表與程式碼複製功能。
+
+14 章皆已建立 Q&A，共 142 題，目前皆為整理中。第一章 12 題、第二章 10 題已保留原答與回饋；第三至十四章各 10 題待作答。
+
+第一次設定建置環境（Python 3.9 以上）：
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r site/requirements.txt
+```
+
+產生頁面：
+
+```sh
+.venv/bin/python site/build.py
+```
+
+修改筆記或版型後，重新執行建置並重新整理瀏覽器。產出位於 `site/public/`，不納入版本控制。
 
 本機預覽：
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1 --directory site
+python3 -m http.server 4173 --bind 127.0.0.1 --directory site/public
 ```
 
 開啟 `http://127.0.0.1:4173/`。
+
+### 撰寫與維護筆記
+
+- `site/content/chapters.json`：篇章、小節、摘要、筆記狀態與更新日期。
+- `site/content/01.md` 至 `site/content/14.md`：各章筆記與 Q&A。
+- `site/templates/`：首頁、章節頁與共用導覽版型。
+- `site/assets/`：共用樣式與閱讀互動。
+
+新增章節筆記時，在該章的 metadata 填入 `note`（例如 `02.md`）與 `updated`（例如 `2026-10-01`），並設定 `status`：`pending`（尚未開始）、`draft`（示範草稿）、`in-progress`（整理中）、`complete`（已整理）。更新日期顯示於章節頁，不自動推定閱讀進度。
+
+筆記可依「學習目標 → 閱讀筆記 → 設計權衡 → 實驗與案例 → Q&A → 尚未理解的問題 → 講義來源」整理。閱讀筆記沿用對應講義的小節順序；Q&A依主題分組，保留題目、原答與回饋。支援 Markdown 表格、程式碼區塊，以及 `!!! note`、`!!! warning`、`!!! question` 提示區塊。
+
+### 手動部署
 
 部署 workflow：`.github/workflows/deploy-pages.yml`，僅使用 `workflow_dispatch` 手動觸發。
 
@@ -228,4 +258,4 @@ python3 -m http.server 4173 --bind 127.0.0.1 --directory site
 2. 在 **Settings → Pages → Build and deployment → Source** 選擇 **GitHub Actions**。
 3. 在 **Actions → Deploy GitHub Pages → Run workflow** 手動部署。
 
-部署內容僅包含 `site/`。Push 與 pull request 不會觸發此 workflow；部署完成後可從 workflow 的 `github-pages` environment 開啟網站。
+Workflow 會安裝 Markdown 套件、執行 `site/build.py`，再部署 `site/public/`，不會發布內容來源與建置程式。Push 與 pull request 不會觸發此 workflow；部署完成後可從 workflow 的 `github-pages` environment 開啟網站。

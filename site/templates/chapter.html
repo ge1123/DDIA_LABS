@@ -1,0 +1,13 @@
+<nav class="breadcrumb" aria-label="所在位置"><a href="../index.html">筆記首頁</a><span aria-hidden="true">/</span><a href="../index.html#part-$part_id">$part_name</a><span aria-hidden="true">/</span><span>第 $number 章</span></nav>
+<article>
+  <header class="article-header">
+    <p class="eyebrow">CHAPTER $padded_number <span class="chapter-status $status">$status_label</span></p>
+    <h1>$chapter_title</h1>
+    <p class="article-intro">$summary</p>
+    <div class="article-meta">$updated <a href="https://ddia.vonng.com/tw/ch$number/">閱讀對應講義 <span aria-hidden="true">↗</span></a></div>
+  </header>
+  $notice
+  <details class="mobile-toc"><summary>本頁目錄 <span aria-hidden="true">⌄</span></summary>$toc</details>
+  <div class="prose">$body</div>
+</article>
+<nav class="chapter-pagination" aria-label="章節切換">$previous $next</nav>

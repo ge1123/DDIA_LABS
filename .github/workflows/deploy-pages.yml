@@ -25,13 +25,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Build notebook
+        run: |
+          python3 -m pip install -r site/requirements.txt
+          python3 site/build.py
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./site
+          path: ./site/public
 
       - name: Deploy GitHub Pages
         id: deployment

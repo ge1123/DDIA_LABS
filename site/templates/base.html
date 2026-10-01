@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="$description">
+    <meta name="color-scheme" content="light">
+    <title>$title · DDIA Labs</title>
+    <link rel="stylesheet" href="${root}assets/styles.css">
+    <script defer src="${root}assets/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至主要內容</a>
+    <header class="topbar">
+      <a class="brand" href="${root}index.html" aria-label="DDIA Labs 首頁">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span>DDIA <span class="brand-light">LABS</span></span>
+        <span class="brand-caption">閱讀・思考・實驗</span>
+      </a>
+      <nav class="top-links" aria-label="主要導覽">
+        <a href="${root}index.html#chapters">章節筆記</a>
+        <a href="https://ddia.vonng.com/tw/toc/">繁中講義 <span aria-hidden="true">↗</span></a>
+        <a href="https://github.com/ge1123/DDIA_LABS">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <div class="page-shell $layout">
+      <aside class="sidebar" aria-label="章節導覽">
+        <a class="sidebar-home" href="${root}index.html">← 筆記首頁</a>
+        <p class="nav-label">DDIA 第二版</p>
+        $chapter_nav
+        <div class="sidebar-foot">依繁體中文講義編制<br>3 篇・14 章</div>
+      </aside>
+      <main id="main" tabindex="-1">
+        <details class="chapter-menu">
+          <summary>章節導覽 <span aria-hidden="true">⌄</span></summary>
+          $chapter_nav
+        </details>
+        $content
+        <footer class="page-footer">
+          <span>DDIA Labs · 用自己的話，理解資料系統。</span>
+          <a href="https://ddia.vonng.com/tw/toc/">講義來源 ↗</a>
+        </footer>
+      </main>
+      $page_toc
+    </div>
+    <div class="sr-only" id="copy-feedback" role="status" aria-live="polite"></div>
+  </body>
+</html>
